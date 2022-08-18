@@ -1,41 +1,30 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import logo from "./logo.png";
+
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Bookmarks from "./pages/Bookmarks";
+import Explore from "./pages/Explore";
+import Profile from "./pages/Profile";
+import PageNotFound from "./pages/PageNotFound";
+import Navbar from "./components/Navbar";
+import Feed from "./pages/Feed";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="mockBee logo" width="180" height="180" />
-        <h1 className="brand-title">
-          Welcome to <span>mockBee!</span>
-        </h1>
-        <p className="brand-description">
-          Get started by editing <code>src/App.js</code>
-        </p>
-        <div className="links">
-          <a
-            href="https://mockbee.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore mockBee
-          </a>
-          <a
-            href="https://mockbee.netlify.app/docs/api/introduction"
-            target="_blank"
-            rel="noreferrer"
-          >
-            API Documentation
-          </a>
-          <a
-            href="https://github.com/neogcamp/mockBee"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contribute
-          </a>
-        </div>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/howdy" element={<Landing />}></Route>
+        <Route path="/" element={<Feed />}></Route>
+        <Route path="/explore" element={<Explore />}></Route>
+        <Route path="/bookmarks" element={<Bookmarks />}></Route>
+        <Route path="/profile/:profileId" element={<Profile />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
+      </Routes>
     </div>
   );
 }
