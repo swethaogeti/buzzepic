@@ -6,7 +6,7 @@ import Suggestions from "../components/Suggestions";
 const Feed = () => {
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
-      <main className="flex">
+      <main className="flex ">
         {/* sidebar */}
         <Sidebar />
         {/* feed */}

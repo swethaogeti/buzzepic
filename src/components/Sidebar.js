@@ -7,7 +7,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircleRounded";
 import SidebarRow from "./SidebarRow";
 const Sidebar = () => {
   return (
-    <div className="p-2 mt-5 max-w-[600px] xl:min-w-[300px] ">
+    <div className="p-2 mt-5  sticky max-w-[600px] xl:min-w-[300px] hidden md:block">
       <SidebarRow Icon={HomeIcon} title={"Feed"} path={""} />
       <SidebarRow Icon={ExploreIcon} title={"Explore"} path={"explore"} />
       <SidebarRow Icon={BookmarkIcon} title={"Bookmarks"} path={"bookmarks"} />
