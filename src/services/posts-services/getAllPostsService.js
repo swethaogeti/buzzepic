@@ -1,5 +1,3 @@
 import axios from "axios";
 
-export const getAllPostsService = () => {
-  axios.get("/api/posts");
-};
+export const getAllPostsService = () => axios.get("/api/posts");
