@@ -1,11 +1,12 @@
 import axios from "axios";
 
-export const upVoteCommentService = (postId, commentId, token) => {
-  axios.post(
+export const upVoteCommentService = async (postId, commentId, token) => {
+  const response = await axios.post(
     `/api/comments/upvote/${postId}/${commentId}`,
     {},
     {
       headers: { authorization: token },
     }
   );
+  return response;
 };

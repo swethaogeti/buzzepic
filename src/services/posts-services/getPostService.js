@@ -1,5 +1,6 @@
 import axios from "axios";
 
-export const getPostService = (postId) => {
-  axios.get(`/api/posts/${postId}`);
+export const getPostService = async (postId) => {
+  const response = await axios.get(`/api/posts/${postId}`);
+  return response;
 };
