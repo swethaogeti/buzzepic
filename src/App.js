@@ -10,20 +10,23 @@ import Profile from "./pages/Profile";
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 import Feed from "./pages/Feed";
+import PostPage from "./pages/PostPage";
 
 function App() {
   return (
     <div>
       <Navbar />
+
       <Routes>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/howdy" element={<Landing />}></Route>
-        <Route path="/" element={<Feed />}></Route>
+        <Route path="/" element={<Landing />}></Route>
+        <Route path="/feed" element={<Feed />}></Route>
         <Route path="/explore" element={<Explore />}></Route>
         <Route path="/bookmarks" element={<Bookmarks />}></Route>
-        <Route path="/profile/:profileId" element={<Profile />}></Route>
+        <Route path="/profile/:username" element={<Profile />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
+        <Route path="/posts/:postId" element={<PostPage />}></Route>
       </Routes>
     </div>
   );

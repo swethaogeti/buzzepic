@@ -28,6 +28,7 @@ const postSlice = createSlice({
     },
     [getPost.fulfilled]: (state, { payload }) => {
       state.isloading = false;
+
       state.post = payload.post;
       state.error = "";
     },

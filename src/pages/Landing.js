@@ -16,9 +16,9 @@ const Landing = () => {
           macaroon. Bear claw cake chocolate cake dragée cupcake jelly beans
           fruitcake brownie
         </p>
-        <Link to="/">
+        <Link to="/login">
           <button className="bg-gray-400 p-2 rounded text-white font-bold text-center mt-3 ">
-            Explore
+            Login to Explore
           </button>
         </Link>
       </div>

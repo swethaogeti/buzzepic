@@ -1,16 +1,52 @@
-import React from "react";
-import CameraIcon from "@material-ui/icons/CameraAltRounded";
+import { Avatar } from "@material-ui/core";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { createPost } from "../features/postsSlice";
+
 const TextInputBox = () => {
+  const { user, token } = useSelector((state) => state.auth);
+  console.log(user);
+  const navigate = useNavigate();
+  const [postData, setPostText] = useState({ content: "" });
+  const dispatch = useDispatch();
+  const handleCreatePost = async () => {
+    if (postData.content !== " ") {
+      const res = await dispatch(createPost({ postData, token }));
+    }
+    setPostText({ content: " " });
+  };
   return (
     <div className="bg-white p-2 text-gray-600  font-medium  mt-6">
-      <div className="flex items-start justify-start space-x-1 p-2">
-        <img
-          src="https://avatars.githubusercontent.com/u/65771591?v=4"
-          className="object-contain rounded-full w-12 h-12"
-        ></img>
-        <form className="flex flex-1">
+      <div className="flex items-start justify-start space-x-1 p-2 cursor-pointer">
+        {user?.avatarURL ? (
+          <img
+            src={user.avatarURL}
+            className="object-contain rounded-full w-14 h-14"
+          ></img>
+        ) : (
+          <Avatar
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Eo_circle_purple_white_letter-s.svg/1200px-Eo_circle_purple_white_letter-s.svg.png"
+            className="h-14 w-14"
+          ></Avatar>
+        )}
+        {/* <img
+          src={
+            avatarURL
+              ? avatarURL
+              : ""
+          }
+          className="object-contain rounded-full w-14 h-14"
+        ></img> */}
+        <form className="flex flex-1" onSubmit={(e) => e.preventDefault}>
           <textarea
-            placeholder="what's in your mind?"
+            value={postData.content}
+            onChange={(e) =>
+              setPostText({ ...postData, content: e.target.value })
+            }
+            placeholder={`what's in your mind ${
+              user ? user?.firstName : "buddy Login to post"
+            }`}
             className="flex-grow  h-24 focus:outline-none px-2"
           ></textarea>
           <button hidden type="submit">
@@ -20,12 +56,10 @@ const TextInputBox = () => {
       </div>
 
       <div className="flex justify-end p-2 border-b-2">
-        {/* <div className="flex items-center space-x-1 hover:bg-gray-100 flex-grow justify-center hover:rounded-lg p-2 cursor-pointer">
-          <CameraIcon className="h-7 text-red-500" />
-          <p className="text-xs sm:text-sm">Live Video</p>
-        </div> */}
-
-        <button className="p-1 b text-[1rem] w-16 bg-purple-500  text-white rounded-full">
+        <button
+          className="p-1 b text-[1rem] w-16 bg-purple-500  text-white rounded-full"
+          onClick={handleCreatePost}
+        >
           Post
         </button>
       </div>

@@ -17,14 +17,14 @@ const login = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(
         "error occured in login service",
-        error.response.data
+        error.response.data.error[0]
       );
     }
   }
 );
 
-const signin = createAsyncThunk(
-  "auth/signIn",
+const signup = createAsyncThunk(
+  "auth/signup",
   async (user, { rejectWithValue }) => {
     try {
       const { data } = await signupService(user);
@@ -55,6 +55,7 @@ const authSlice = createSlice({
       state.loading = true;
     },
     [login.fulfilled]: (state, { payload }) => {
+      console.log(payload);
       state.token = payload.encodedToken;
       state.user = payload.foundUser;
       state.loading = false;
@@ -63,19 +64,19 @@ const authSlice = createSlice({
     [login.rejected]: (state) => {
       state.loading = false;
     },
-    [signin.pending]: (state) => {
+    [signup.pending]: (state) => {
       state.loading = true;
     },
-    [signin.fulfilled]: (state, { payload }) => {
+    [signup.fulfilled]: (state, { payload }) => {
       state.token = payload.encodedToken;
       state.user = payload.createdUser;
       state.loading = false;
     },
-    [signin.rejected]: (state) => {
+    [signup.rejected]: (state) => {
       state.loading = false;
     },
   },
 });
 const { signout } = authSlice.actions;
 const authReducer = authSlice.reducer;
-export { authReducer, login, signin, signout };
+export { authReducer, login, signup, signout };
