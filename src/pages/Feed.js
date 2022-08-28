@@ -12,6 +12,7 @@ const Feed = () => {
         {/* sidebar */}
         <Sidebar />
         {/* feed */}
+
         <FeedContainer />
         <Suggestions />
       </main>

@@ -36,7 +36,7 @@ export const posts = [
     firstName: "Swetha",
     lastName: "Ogeti",
     avatarURL: "https://avatars.githubusercontent.com/u/65771591?v=4",
-    username: "sweety555",
+    username: "Sweety555",
     createdAt: new Date("June 21, 2022"),
     updatedAt: new Date("June 21, 2022"),
     comments: [

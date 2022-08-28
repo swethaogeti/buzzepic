@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getPostService } from "../services";
 
 const initialState = {
-  post: [],
+  post: null,
   isloading: false,
   error: "",
 };

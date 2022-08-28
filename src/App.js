@@ -11,6 +11,9 @@ import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 import Feed from "./pages/Feed";
 import PostPage from "./pages/PostPage";
+import LikesModal from "./components/LikesModal";
+import EditProfileModal from "./components/EditProfileModal";
+import EditPostModal from "./components/EditPostModal";
 
 function App() {
   return (

@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
 import {
   getAllUserPostsService,
@@ -26,7 +25,7 @@ const getUser = createAsyncThunk(
   async (username, { rejectWithValue }) => {
     try {
       const { data } = await getUserService(username);
-      console.log(data);
+
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -78,7 +77,6 @@ const userSlice = createSlice({
     },
     [getAllUserPosts.fulfilled]: (state, { payload }) => {
       state.posts.isloading = false;
-      console.log(payload.posts);
       state.posts.userPosts = payload.posts;
     },
     [getAllUserPosts.rejected]: (state, { payload }) => {

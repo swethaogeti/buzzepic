@@ -19,4 +19,16 @@ code {
   .btn {
     @apply h-7 cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
   }
+
+  .bg-modal {
+    @apply w-full h-screen top-0 bottom-0  left-0 right-0 fixed flex justify-center items-center z-50  bg-[#6c686869] cursor-pointer;
+  }
+
+  .modal-input {
+    @apply border placeholder-gray-600 focus:outline-purple-400 p-1 rounded-md text-[0.9rem];
+  }
+
+  .modal-h2 {
+    @apply font-bold text-[1rem] text-gray-700;
+  }
 }
