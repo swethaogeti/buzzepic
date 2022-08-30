@@ -45,7 +45,7 @@ const Navbar = () => {
             "hey hi 👋"
           ) : (
             <button
-              onClick={() => dispatch(signout(), navigate("/"))}
+              onClick={() => navigate("/")}
               className="text-purple-600 font-bold"
             >
               LogOut
