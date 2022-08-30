@@ -12,6 +12,7 @@ import { signout } from "../features/authSlice";
 
 const Navbar = () => {
   const { user } = useSelector((state) => state.auth);
+  const { username } = user;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
@@ -30,7 +31,7 @@ const Navbar = () => {
           <SidebarRow Icon={HomeIcon} path={"feed"} />
           <SidebarRow Icon={ExploreIcon} path={"explore"} />
           <SidebarRow Icon={BookmarkIcon} path={"bookmarks"} />
-          <SidebarRow Icon={AccountCircleIcon} path={"profile/:profileId"} />
+          <SidebarRow Icon={AccountCircleIcon} path={`profile/${username}`} />
         </div>
         <div className="flex  space-x-2 items-center cursor-pointer flex-col">
           <Avatar
