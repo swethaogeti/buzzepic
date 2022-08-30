@@ -63,7 +63,6 @@ const usersSlice = createSlice({
       state.error = payload;
     },
     [followUser.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.users = payload.users;
     },
     [followUser.rejected]: (state, { payload }) => {

@@ -15,9 +15,8 @@ const Explore = () => {
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
       <main className="flex">
-        {/* sidebar */}
         <Sidebar />
-        {/* feed */}
+
         <Container posts={posts} />
         <Suggestions />
       </main>

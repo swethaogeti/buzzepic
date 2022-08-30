@@ -21,10 +21,10 @@ const Bookmarks = () => {
         {bookmarks.length ? (
           <Container posts={bookmarks} />
         ) : (
-          <div className=" flex items-center justify-center max-w-full">
+          <div className=" flex items-center justify-center w-full">
             <img
               src="https://assets-global.website-files.com/5bcb5ee81fb2091a2ec550c7/613e3b12dd1556b17a1611cc_wfh-drawkit-thumbnail.png"
-              className=" object-contain"
+              className=" object-contain "
             ></img>
           </div>
         )}

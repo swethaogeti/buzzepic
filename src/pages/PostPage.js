@@ -15,6 +15,7 @@ const PostPage = () => {
   const { postId } = useParams();
   const { post } = useSelector((state) => state.post);
   const { posts } = useSelector((state) => state.posts);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPost(postId));
@@ -24,7 +25,6 @@ const PostPage = () => {
     dispatch(getAllPosts());
   }, [postId]);
 
-  console.log(post);
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
       <main className="flex ">
@@ -37,7 +37,7 @@ const PostPage = () => {
           >
             <div className="mx-auto max-w-lg md:max-w-full">
               {post && <Post item={post} />}
-              <CommentInput />
+              <CommentInput post={post} />
 
               {post?.comments?.map((item) => {
                 return <Comment item={item} />;

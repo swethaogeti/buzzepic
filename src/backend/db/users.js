@@ -15,22 +15,6 @@ export const users = [
     bio: "Coding 👨‍💻| Be you! The world will adjust!🦋🌊",
     website: "https://github.com/swethaogeti",
     following: [
-      // {
-      //   _id: uuid(),
-      //   firstName: "Jyothika",
-      //   lastName: "Ogeti",
-      //   username: "@Jyo14Cutie",
-      //   avatarURL:
-      //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlnhU3PYRHPDEx9FJBpbILLTDjlDSw4RE9Q&usqp=CAU",
-      // },
-      // {
-      //   _id: uuid(),
-      //   firstName: "Vinay",
-      //   lastName: "Ogeti",
-      //   username: "@vinnu_TheBigBoss",
-      //   avatarURL:
-      //     "https://i0.wp.com/wikifolder.com/wp-content/uploads/2019/04/DQ-Photo.jpg?resize=498%2C582&ssl=1",
-      // },
       {
         _id: uuid(),
         firstName: "Siya",
@@ -143,15 +127,7 @@ export const users = [
           "https://c4.wallpaperflare.com/wallpaper/54/977/257/batman-the-telltale-series-the-enemy-within-picture-image-wallpaper-thumb.jpg",
       },
     ],
-    followers: [
-      {
-        _id: uuid(),
-        firstName: "Swetha",
-        lastName: "Ogeti",
-        username: "Sweety555",
-        avatarURL: "https://avatars.githubusercontent.com/u/65771591?v=4",
-      },
-    ],
+    followers: [],
     password: "jyothika14",
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -193,13 +169,6 @@ export const users = [
       },
     ],
     followers: [
-      {
-        _id: uuid(),
-        firstName: "Swetha",
-        lastName: "Ogeti",
-        username: "Sweety555",
-        avatarURL: "https://avatars.githubusercontent.com/u/65771591?v=4",
-      },
       {
         _id: uuid(),
         firstName: "Jyothika",
@@ -389,13 +358,6 @@ export const users = [
       },
     ],
     followers: [
-      // {
-      //   _id: uuid(),
-      //   firstName: "Swetha",
-      //   lastName: "Ogeti",
-      //   username: "Sweety555",
-      //   avatarURL: "https://avatars.githubusercontent.com/u/65771591?v=4",
-      // },
       {
         _id: uuid(),
         firstName: "Jyothika",

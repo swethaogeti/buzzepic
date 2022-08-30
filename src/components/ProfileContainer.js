@@ -21,7 +21,7 @@ const ProfileContainer = () => {
 
   useEffect(() => {
     dispatch(getUser(username));
-  }, [dispatch, username, users]);
+  }, [dispatch, username, users, posts, userProfile]);
 
   useEffect(() => {
     dispatch(getAllUserPosts(username));
@@ -40,7 +40,7 @@ const ProfileContainer = () => {
         )}
         {posts && <Posts posts={userPosts} />}
         {editProfileModal && (
-          <EditProfileModal setModal={setEditProfileModal} />
+          <EditProfileModal setModal={setEditProfileModal} user={userProfile} />
         )}
       </div>
     </div>

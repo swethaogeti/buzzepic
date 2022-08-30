@@ -22,12 +22,6 @@ const Landing = () => {
           </button>
         </Link>
       </div>
-      {/* <div className="outline-dotted">
-        <img
-          className=""
-          src="https://cdn.dribbble.com/users/614270/screenshots/4046303/yoga_drib01.gif"
-        ></img>
-      </div> */}
       <div className="flex justify-center items-center mx-auto bg-purple-50">
         <img
           src="https://cdn.dribbble.com/users/614270/screenshots/4046303/yoga_drib01.gif"

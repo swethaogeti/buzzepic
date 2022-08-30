@@ -1,13 +1,12 @@
 import { Avatar } from "@material-ui/core";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+
 import { createPost } from "../features/postsSlice";
 
 const TextInputBox = () => {
   const { user, token } = useSelector((state) => state.auth);
-  console.log(user);
-  const navigate = useNavigate();
+
   const [postData, setPostText] = useState({ content: "" });
   const dispatch = useDispatch();
   const handleCreatePost = async () => {

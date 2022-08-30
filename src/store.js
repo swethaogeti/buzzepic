@@ -5,6 +5,7 @@ import { bookmarkReducer } from "./features/bookmarksSlice";
 import { postReducer } from "./features/postSlice";
 import { usersReducer } from "./features/usersSlice";
 import { userReducer } from "./features/userSlice";
+import { filterReducer } from "./features/filterSlice";
 export const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -13,5 +14,6 @@ export const store = configureStore({
     post: postReducer,
     users: usersReducer,
     user: userReducer,
+    filters: filterReducer,
   },
 });

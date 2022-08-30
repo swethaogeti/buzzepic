@@ -206,6 +206,7 @@ const postsSlice = createSlice({
       state.error = "";
     },
     [deletePost.fulfilled]: (state, { payload }) => {
+      console.log(payload);
       state.posts = payload.posts;
       state.error = "";
     },

@@ -1,23 +1,28 @@
 import React, { useState } from "react";
 import EditPostModal from "./EditPostModal";
 import ClearIcon from "@material-ui/icons/Clear";
-const PostModal = ({ setModal }) => {
+const PostModal = ({ setModal, handleDeletePost, post }) => {
   const [editPostModal, setEditPostModal] = useState(false);
+
   return (
     <div>
       <div
-        className="flex   justify-start  p-1 bg-gray-50 
+        className="flex   justify-start  p-1 bg-white shadow-md
        border-2"
-        // onClick={() => setModal(false)}
       >
         <div className="flex flex-col">
           <button
-            className="hover:bg-white w-14 font-bold text-gray-700"
-            onClick={() => setEditPostModal(true)}
+            className="hover:bg-gray-100 w-14 font-medium text-gray-700"
+            onClick={() => {
+              setEditPostModal(true);
+            }}
           >
             Edit
           </button>
-          <button className="hover:bg-white w-14 font-bold  text-gray-700">
+          <button
+            className="hover:bg-gray-100 w-14 font-medium  text-gray-700"
+            onClick={handleDeletePost}
+          >
             Delete
           </button>
         </div>
@@ -27,7 +32,9 @@ const PostModal = ({ setModal }) => {
         </div>
       </div>
 
-      {editPostModal && <EditPostModal setModal={setEditPostModal} />}
+      {editPostModal && (
+        <EditPostModal setModal={setEditPostModal} post={post} />
+      )}
     </div>
   );
 };

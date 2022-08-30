@@ -6,7 +6,7 @@ const LikesModal = ({ setModal, likedBy }) => {
       <div className="bg-white flex p-2">
         <div className="flex flex-col space-y-2 md:w-[18rem] w-[15rem] h-auto p-2">
           <div>
-            <h2 className="text-[1.4rem] font-bold text-gray-800">LikedBy</h2>
+            <h2 className="text-[1.4rem] font-bold text-gray-800">Liked by</h2>
           </div>
 
           {likedBy.map((item) => {

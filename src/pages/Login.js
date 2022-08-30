@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../features/authSlice";
 import { USER_DATA, USER_TOKEN } from "../constants";
-import { toast } from "tailwind-toast";
 
 const Login = () => {
   const [userLogin, setUserLogin] = useState({ username: "", password: "" });

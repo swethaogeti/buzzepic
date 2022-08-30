@@ -4,7 +4,6 @@ import { followUser } from "../features/usersSlice";
 
 const SuggestionRow = ({ item }) => {
   const { _id, avatarURL, firstName, lastName, username } = item;
-  //console.log(item);
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 

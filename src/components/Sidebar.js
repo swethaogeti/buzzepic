@@ -16,7 +16,6 @@ const Sidebar = () => {
       <SidebarRow Icon={BookmarkIcon} title={"Bookmarks"} path={"bookmarks"} />
 
       <SidebarRow
-        // src={currentUser?.avatarURL}
         Icon={AccountCircleIcon}
         path={`profile/${username}`}
         title={"Profile"}

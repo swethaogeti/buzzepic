@@ -27,7 +27,7 @@ const Navbar = () => {
         </Link>
 
         <div className="  max-w-[600px] xl:min-w-[300px] flex md:hidden">
-          <SidebarRow Icon={HomeIcon} path={""} />
+          <SidebarRow Icon={HomeIcon} path={"feed"} />
           <SidebarRow Icon={ExploreIcon} path={"explore"} />
           <SidebarRow Icon={BookmarkIcon} path={"bookmarks"} />
           <SidebarRow Icon={AccountCircleIcon} path={"profile/:profileId"} />

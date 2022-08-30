@@ -56,7 +56,6 @@ const authSlice = createSlice({
       state.loading = true;
     },
     [login.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.token = payload.encodedToken;
       state.user = payload.foundUser;
       state.loading = false;

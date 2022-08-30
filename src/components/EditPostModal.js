@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import ClearIcon from "@material-ui/icons/Clear";
-const EditPostModal = ({ setModal }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { editPost } from "../features/postsSlice";
+const EditPostModal = ({ setModal, post }) => {
+  const { _id, firstName, lastName, username, avatarURL, content } = post;
+  const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.auth);
+  const [postData, setPostText] = useState({ content });
+  const handleEditPost = () => {
+    dispatch(editPost({ postId: _id, postData, token }));
+    setModal(false);
+  };
+
   return (
     <div className="bg-modal bg-[#5c58583a]">
       <div className="bg-white flex p-2 ">
@@ -13,27 +24,37 @@ const EditPostModal = ({ setModal }) => {
           </div>
           <div className="flex space-x-2">
             <img
-              src="https://cdn.dribbble.com/users/2231291/screenshots/10845894/media/6eaae88445ba46c54c2d9debec0ff64d.jpg?compress=1&resize=1000x750&vertical=top"
+              src={avatarURL}
               className="w-12 h-12 rounded-full md:w-14 md:h-14"
             ></img>
             <div>
               <h2 className="text-gray-700 font-[600] text-[0.9rem] ">
-                Swetha Ogeti
+                {firstName}
+                {lastName}
               </h2>
-              <p className="text-[.8rem] font-light text-gray-500">@Sweet555</p>
+              <p className="text-[.8rem] font-light text-gray-500">
+                {username}
+              </p>
             </div>
           </div>
           <form className="flex flex-1" onSubmit={(e) => e.preventDefault}>
             <textarea
               className="flex-grow border-2 h-24 focus:outline-purple-700 p-2  placeholder-gray-700 font-medium text-[1rem]"
-              placeholder="life is not a matter of holding good cards but of playing a poor hand well"
+              placeholder={content}
+              value={postData.content}
+              onChange={(e) =>
+                setPostText({ ...postData, content: e.target.value })
+              }
             ></textarea>
           </form>
           <div className="flex justify-end space-x-3">
             <button className="w-14 p-1 text-purple-600 rounded-md font-bold">
               Cancel
             </button>
-            <button className="w-14 p-1 text-purple-white bg-purple-500 rounded-md text-white font-bold">
+            <button
+              className="w-14 p-1 text-purple-white bg-purple-500 rounded-md text-white font-bold"
+              onClick={handleEditPost}
+            >
               Save
             </button>
           </div>

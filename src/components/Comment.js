@@ -2,7 +2,6 @@ import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import RoomIcon from "@material-ui/icons/Room";
 const Comment = ({ item }) => {
-  console.log(item);
   return (
     <div className="flex space-x-1 p-2 m-2 border cursor-pointer bg-white ">
       <img src={item?.avatarURL} className="h-14 w-14 rounded-full"></img>

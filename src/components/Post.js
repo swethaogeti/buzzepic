@@ -11,12 +11,10 @@ import {
   bookmarkPost,
   removePostFromBookmark,
 } from "../features/bookmarksSlice";
-import { dislikePost, likePost } from "../features/postsSlice";
+import { deletePost, dislikePost, likePost } from "../features/postsSlice";
 import PostModal from "./PostModal";
-import { Button } from "@material-ui/core";
 import { useState } from "react";
 import LikesModal from "./LikesModal";
-import EditPostModal from "./EditPostModal";
 
 const Post = ({ item }) => {
   const { lastName, username, firstName, _id, likes, comments } = item;
@@ -38,13 +36,17 @@ const Post = ({ item }) => {
 
   const handleBookmark = async () => {
     const res = await dispatch(bookmarkPost({ postId: _id, token }));
-    console.log(res);
   };
 
   const handleRemoveBookmark = async () => {
     const res = await dispatch(removePostFromBookmark({ postId: _id, token }));
+  };
+
+  const handleDeletePost = async () => {
+    const res = await dispatch(deletePost({ postId: _id, token }));
     console.log(res);
   };
+
   return (
     <div>
       <div className="flex space-x-1 p-1 m-1 border cursor-pointer relative">
@@ -76,7 +78,8 @@ const Post = ({ item }) => {
                 {openPostModal && (
                   <PostModal
                     setModal={setOpenPostModal}
-                    setEditPostModal={setEditPostModal}
+                    handleDeletePost={handleDeletePost}
+                    post={item}
                   />
                 )}
               </div>
