@@ -49,7 +49,7 @@ const Post = ({ item }) => {
 
   return (
     <div>
-      <div className="flex space-x-1 p-1 m-1 border cursor-pointer relative">
+      <div className="flex space-x-1 p-1 my-2 border-2 cursor-pointer relative">
         <img src={item.avatarURL} className="h-14 w-14 rounded-full"></img>
         <div className="space-y-3 flex-1">
           <div className="flex items-start justify-between ">
@@ -64,8 +64,8 @@ const Post = ({ item }) => {
                 {item.username}
               </p>
             </div>
-            <h3 className="text-gray-500 font-bold text-[.7rem] md:text-[.9rem] flex items-center">
-              <span className="text-gray-800 text-[1.3rem]">•&nbsp;</span>{" "}
+            <h3 className="text-gray-500 font-medium text-[.7rem] md:text-[.9rem] flex items-center">
+              <span className="text-gray-500 text-[1.3rem]">•&nbsp;</span>{" "}
               <Moment fromNow>{item.updatedAt}</Moment>
             </h3>
 

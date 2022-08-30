@@ -1,6 +1,3 @@
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import RoomIcon from "@material-ui/icons/Room";
 const Comment = ({ item }) => {
   return (
     <div className="flex space-x-1 p-2 m-2 border cursor-pointer bg-white ">
@@ -12,7 +9,7 @@ const Comment = ({ item }) => {
               {item.firstName} {item.lastName}
             </h3>
 
-            <p className="text-gray-500 font-thin text-[.7rem] md:text-[.9rem]">
+            <p className="text-gray-600 font-medium text-[.7rem] md:text-[.9rem]">
               {item.username}
             </p>
           </div>

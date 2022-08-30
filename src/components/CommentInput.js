@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addPostComment } from "../features/postsSlice";

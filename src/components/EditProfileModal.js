@@ -30,7 +30,7 @@ const EditProfileModal = ({ setModal, user }) => {
           </h1>
           <ClearIcon onClick={() => setModal(false)} />
         </div>
-        {/* **************************************** */}
+
         <div className="flex space-x-2 flex-col md:flex-row">
           <div>
             <h3 className="modal-h2">
@@ -60,7 +60,7 @@ const EditProfileModal = ({ setModal, user }) => {
             ></input>
           </div>
         </div>
-        {/* **************************************** */}
+
         <div className="flex flex-col">
           <h2 className="modal-h2">
             Username <span className="text-red-600 font-semibold">*</span>
@@ -74,7 +74,7 @@ const EditProfileModal = ({ setModal, user }) => {
             className="modal-input flex-1"
           ></input>
         </div>
-        {/* **************************************** * */}
+
         <div className="flex flex-col">
           <h2 className="modal-h2">Avatar URL</h2>
           <input

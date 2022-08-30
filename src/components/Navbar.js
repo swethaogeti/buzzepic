@@ -3,7 +3,6 @@ import React from "react";
 import HomeIcon from "@material-ui/icons/HomeRounded";
 import ExploreIcon from "@material-ui/icons/ExploreOutlined";
 import BookmarkIcon from "@material-ui/icons/BookmarkBorderOutlined";
-import ArchiveIcon from "@material-ui/icons/ArchiveOutlined";
 import AccountCircleIcon from "@material-ui/icons/AccountCircleRounded";
 import SidebarRow from "./SidebarRow";
 import { Link, useNavigate } from "react-router-dom";

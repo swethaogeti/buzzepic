@@ -1,4 +1,3 @@
-import React from "react";
 import ClearIcon from "@material-ui/icons/Clear";
 const LikesModal = ({ setModal, likedBy }) => {
   return (

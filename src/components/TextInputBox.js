@@ -1,7 +1,6 @@
 import { Avatar } from "@material-ui/core";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { createPost } from "../features/postsSlice";
 
 const TextInputBox = () => {
@@ -16,7 +15,7 @@ const TextInputBox = () => {
     setPostText({ content: " " });
   };
   return (
-    <div className="bg-white p-2 text-gray-600  font-medium  mt-6">
+    <div className="bg-white p-2 text-gray-600  font-medium border-2 shadow-sm mt-6">
       <div className="flex items-start justify-start space-x-1 p-2 cursor-pointer">
         {user?.avatarURL ? (
           <img
@@ -29,14 +28,7 @@ const TextInputBox = () => {
             className="h-14 w-14"
           ></Avatar>
         )}
-        {/* <img
-          src={
-            avatarURL
-              ? avatarURL
-              : ""
-          }
-          className="object-contain rounded-full w-14 h-14"
-        ></img> */}
+
         <form className="flex flex-1" onSubmit={(e) => e.preventDefault}>
           <textarea
             value={postData.content}
@@ -46,7 +38,7 @@ const TextInputBox = () => {
             placeholder={`what's in your mind ${
               user ? user?.firstName : "buddy Login to post"
             }`}
-            className="flex-grow  h-24 focus:outline-none px-2"
+            className="flex-grow h-24 focus:outline-none px-2"
           ></textarea>
           <button hidden type="submit">
             Submit
@@ -54,7 +46,7 @@ const TextInputBox = () => {
         </form>
       </div>
 
-      <div className="flex justify-end p-2 border-b-2">
+      <div className="flex justify-end p-2 ">
         <button
           className="p-1 b text-[1rem] w-16 bg-purple-500  text-white rounded-full"
           onClick={handleCreatePost}

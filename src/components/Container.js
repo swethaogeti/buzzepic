@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import Posts from "./Posts";
 
 const Container = ({ posts }) => {
