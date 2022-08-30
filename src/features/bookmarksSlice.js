@@ -11,11 +11,11 @@ const initialState = {
   error: null,
 };
 
-const getAllBookmark = createAsyncThunk(
-  "bookmarks/getAllBookmark",
+const getAllBookmarks = createAsyncThunk(
+  "bookmarks/getAllBookmarks",
   async (token, { rejectWithValue }) => {
     try {
-      const { data } = await getAllBookmark(token);
+      const { data } = await getAllBookmarkService(token);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -28,6 +28,7 @@ const bookmarkPost = createAsyncThunk(
   async ({ postId, token }, { rejectWithValue }) => {
     try {
       const { data } = await bookmarkPostService(postId, token);
+      return data;
     } catch (error) {
       rejectWithValue(error);
     }
@@ -35,7 +36,7 @@ const bookmarkPost = createAsyncThunk(
 );
 
 const removePostFromBookmark = createAsyncThunk(
-  "bookmark/removePostFromBookmark",
+  "bookmarks/removePostFromBookmark",
   async ({ postId, token }, { rejectWithValue }) => {
     try {
       const { data } = await removePostFromBookmarkService(postId, token);
@@ -49,22 +50,23 @@ const bookmarkSlice = createSlice({
   name: "bookmarks",
   initialState,
   extraReducers: {
-    [getAllBookmark.pending]: (state) => {
+    [getAllBookmarks.pending]: (state) => {
       state.isloading = true;
     },
-    [getAllBookmark.fulfulled]: (state, { payload }) => {
+    [getAllBookmarks.fulfilled]: (state, { payload }) => {
       state.isloading = false;
       state.bookmarks = payload.bookmarks;
       console.log(payload);
       state.error = " ";
     },
-    [getAllBookmark.rejected]: (state, { payload }) => {
+    [getAllBookmarks.rejected]: (state, { payload }) => {
       state.isloading = false;
       state.error = payload;
     },
 
     [bookmarkPost.fulfilled]: (state, { payload }) => {
       state.isloading = false;
+      console.log(payload);
       state.bookmarks = payload.bookmarks;
     },
     [bookmarkPost.rejected]: (state, { payload }) => {
@@ -73,6 +75,8 @@ const bookmarkSlice = createSlice({
     },
 
     [removePostFromBookmark.fulfilled]: (state, { payload }) => {
+      state.isloading = false;
+      console.log(payload);
       state.bookmarks = payload.bookmarks;
     },
     [removePostFromBookmark.rejected]: (state, { payload }) => {
@@ -82,4 +86,4 @@ const bookmarkSlice = createSlice({
 });
 
 export const bookmarkReducer = bookmarkSlice.reducer;
-export { getAllBookmark, removePostFromBookmark, bookmarkPost };
+export { getAllBookmarks, removePostFromBookmark, bookmarkPost };

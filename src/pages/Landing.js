@@ -16,18 +16,12 @@ const Landing = () => {
           macaroon. Bear claw cake chocolate cake dragée cupcake jelly beans
           fruitcake brownie
         </p>
-        <Link to="/">
+        <Link to="/login">
           <button className="bg-gray-400 p-2 rounded text-white font-bold text-center mt-3 ">
-            Explore
+            Login to Explore
           </button>
         </Link>
       </div>
-      {/* <div className="outline-dotted">
-        <img
-          className=""
-          src="https://cdn.dribbble.com/users/614270/screenshots/4046303/yoga_drib01.gif"
-        ></img>
-      </div> */}
       <div className="flex justify-center items-center mx-auto bg-purple-50">
         <img
           src="https://cdn.dribbble.com/users/614270/screenshots/4046303/yoga_drib01.gif"

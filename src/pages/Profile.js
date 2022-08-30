@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "../components/Container";
 import ProfileContainer from "../components/ProfileContainer";
 import Sidebar from "../components/Sidebar";
 import Suggestions from "../components/Suggestions";

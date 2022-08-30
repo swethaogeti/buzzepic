@@ -17,22 +17,6 @@ export const users = [
     following: [
       {
         _id: uuid(),
-        firstName: "Jyothika",
-        lastName: "Ogeti",
-        username: "@Jyo14Cutie",
-        avatarURL:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlnhU3PYRHPDEx9FJBpbILLTDjlDSw4RE9Q&usqp=CAU",
-      },
-      {
-        _id: uuid(),
-        firstName: "Vinay",
-        lastName: "Ogeti",
-        username: "@vinnu_TheBigBoss",
-        avatarURL:
-          "https://i0.wp.com/wikifolder.com/wp-content/uploads/2019/04/DQ-Photo.jpg?resize=498%2C582&ssl=1",
-      },
-      {
-        _id: uuid(),
         firstName: "Siya",
         lastName: "Ray",
         username: "@AlphaCoder",
@@ -143,16 +127,8 @@ export const users = [
           "https://c4.wallpaperflare.com/wallpaper/54/977/257/batman-the-telltale-series-the-enemy-within-picture-image-wallpaper-thumb.jpg",
       },
     ],
-    followers: [
-      {
-        _id: uuid(),
-        firstName: "Swetha",
-        lastName: "Ogeti",
-        username: "Sweety555",
-        avatarURL: "https://avatars.githubusercontent.com/u/65771591?v=4",
-      },
-    ],
-    password: "Sweety555",
+    followers: [],
+    password: "jyothika14",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -195,13 +171,6 @@ export const users = [
     followers: [
       {
         _id: uuid(),
-        firstName: "Swetha",
-        lastName: "Ogeti",
-        username: "Sweety555",
-        avatarURL: "https://avatars.githubusercontent.com/u/65771591?v=4",
-      },
-      {
-        _id: uuid(),
         firstName: "Jyothika",
         lastName: "Ogeti",
         username: "@Jyo14Cutie",
@@ -224,7 +193,7 @@ export const users = [
         avatarURL: "https://images2.alphacoders.com/971/971653.jpg",
       },
     ],
-    password: "Sweety555",
+    password: "vinnu111",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -299,7 +268,7 @@ export const users = [
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlnhU3PYRHPDEx9FJBpbILLTDjlDSw4RE9Q&usqp=CAU",
       },
     ],
-    password: "Sweety555",
+    password: "Vikram23",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -356,7 +325,7 @@ export const users = [
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlnhU3PYRHPDEx9FJBpbILLTDjlDSw4RE9Q&usqp=CAU",
       },
     ],
-    password: "Sweety555",
+    password: "ram444",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -391,13 +360,6 @@ export const users = [
     followers: [
       {
         _id: uuid(),
-        firstName: "Swetha",
-        lastName: "Ogeti",
-        username: "Sweety555",
-        avatarURL: "https://avatars.githubusercontent.com/u/65771591?v=4",
-      },
-      {
-        _id: uuid(),
         firstName: "Jyothika",
         lastName: "Ogeti",
         username: "@Jyo14Cutie",
@@ -413,7 +375,7 @@ export const users = [
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYFPIQg2MDg1JCUhKBKZh3TZWtKCrKKJScyQ&usqp=CAU",
       },
     ],
-    password: "Sweety555",
+    password: "siya888",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },

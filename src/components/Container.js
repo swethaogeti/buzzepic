@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Posts from "./Posts";
-const Container = () => {
+
+const Container = ({ posts }) => {
   return (
-    <div className="flex-grow  h-screen pb-44  ">
-      <div className="mx-auto max-w-lg md:max-w-full ">
-        <Posts />
+    <div className="flex-grow h-screen pb-20 ">
+      <div className="mx-auto max-w-lg md:max-w-full  overflow-scroll h-full scrollbar-hide">
+        <Posts posts={posts} />
       </div>
     </div>
   );

@@ -1,46 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { followUser, unfollowUser } from "../features/usersSlice";
+const ProfileCard = ({ details, setModal }) => {
+  const { user, token } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
-const ProfileCard = () => {
+  const handleFollowUser = () => {
+    dispatch(followUser({ followUserId: details._id, token }));
+  };
+
+  const handleUnfollowUser = () => {
+    dispatch(unfollowUser({ followUserId: details._id, token }));
+  };
   return (
-    <div className="flex md:space-x-5 cursor-pointer border-2 flex-wrap  md:flex-nowrap m-2 p-4 ">
-      <div className="h-20 w-20 md:h-40 md:w-40">
+    <div className="flex md:space-x-5 cursor-pointer border-2  spaxe-x-1  md:flex-nowrap m-2 p-2 flex-wrap md:p-4">
+      <div className="h-28 w-28 mx-auto md:h-48 md:w-48 ">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Eo_circle_purple_white_letter-s.svg/1200px-Eo_circle_purple_white_letter-s.svg.png"
-          className="h-auto max-w-full"
+          src={details?.avatarURL}
+          className="h-full w-full rounded-full"
         ></img>
       </div>
 
-      <div className="space-y-1">
-        {/* ***************************** */}
-        <div className="flex items-center justify-between">
+      <div className="space-y-1 flex-1">
+        <div className="flex items-center justify-between ">
           <div className=" flex flex-col ">
             <h2 className="text-gray-800 font-semibold text-[1.5rem]">
-              Swetha Ogeti
+              {details?.firstName} {details?.lastName}
             </h2>
-            <p className="text-gray-500  text-[1.1rem]">@sweety5555</p>
+            <p className="text-gray-500  text-[1.1rem]">{details?.username}</p>
           </div>
-          <button className="w-14 rounded-full bg-purple-500 text-white p-1">
-            Edit
-          </button>
-        </div>
-        {/* ***************************** */}
 
-        <p>
-          “A thousand words will not leave so deep an impression as one deed.”
-        </p>
+          {user.username === details.username ? (
+            <button
+              className="w-14 rounded-full bg-purple-500 text-white p-1"
+              onClick={() => setModal(true)}
+            >
+              Edit
+            </button>
+          ) : user.following.find(
+              (user) => user.username === details.username
+            ) ? (
+            <button
+              className="w-auto rounded-full  bg-gray-200 text-gray-800 p-2 hover:scale-95 transition-all duration-100 ease-out  "
+              onClick={handleUnfollowUser}
+            >
+              Following
+            </button>
+          ) : (
+            <button
+              className="w-16 rounded-full bg-purple-600 text-white p-1  hover:scale-95 transition-all duration-100 ease-out"
+              onClick={handleFollowUser}
+            >
+              Follow
+            </button>
+          )}
+        </div>
+
+        <p>{details.bio}</p>
         <div className="font-thin text-sm text-gray-400">
-          <a href="https://github.com/swethaogeti">
-            {"https://github.com/swethaogeti"}
-          </a>
+          <a href={details?.website}>{details?.website}</a>
         </div>
 
         <div className="flex space-x-7">
           <div className="flex space-x-1">
-            <h4 className="font-extrabold">4</h4>
+            <h4 className="font-extrabold">{details.following.length}</h4>
             <p>Following</p>
           </div>
           <div className="flex space-x-1">
-            <h4 className="font-extrabold">6</h4>
+            <h4 className="font-extrabold">{details.followers.length}</h4>
             <p>Followers</p>
           </div>
         </div>

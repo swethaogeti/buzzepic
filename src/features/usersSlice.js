@@ -16,6 +16,7 @@ const getAllUsers = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await getAllUsersService();
+
       return data;
     } catch (error) {
       rejectWithValue(error);

@@ -8,13 +8,13 @@ import {
 import { editPost } from "./postsSlice";
 
 const initialState = {
-  userProfile: {
-    details: null,
+  profile: {
+    userProfile: null,
     isloading: false,
     error: null,
   },
-  userPosts: {
-    posts: null,
+  posts: {
+    userPosts: [],
     isloading: false,
     error: null,
   },
@@ -25,6 +25,7 @@ const getUser = createAsyncThunk(
   async (username, { rejectWithValue }) => {
     try {
       const { data } = await getUserService(username);
+
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -34,9 +35,9 @@ const getUser = createAsyncThunk(
 
 const getAllUserPosts = createAsyncThunk(
   "user/getAllUserPosts",
-  async ({ userData, token }, { rejectWithValue }) => {
+  async (username, { rejectWithValue }) => {
     try {
-      const { data } = await getAllUserPostsService(userData, token);
+      const { data } = await getAllUserPostsService(username);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -60,38 +61,38 @@ const userSlice = createSlice({
   initialState,
   extraReducers: {
     [getUser.pending]: (state) => {
-      state.userProfile.isloading = true;
+      state.profile.isloading = true;
     },
     [getUser.fulfilled]: (state, { payload }) => {
-      state.userProfile.isloading = false;
-      state.userProfile.details = payload.user;
+      state.profile.isloading = false;
+      state.profile.userProfile = payload.user;
     },
     [getUser.rejected]: (state, { payload }) => {
-      state.userProfile.isloading = false;
-      state.userProfile.error = payload;
+      state.profile.isloading = false;
+      state.profile.error = payload;
     },
 
     [getAllUserPosts.pending]: (state) => {
-      state.userPosts.isloading = true;
+      state.posts.isloading = true;
     },
     [getAllUserPosts.fulfilled]: (state, { payload }) => {
-      state.userPosts.isloading = false;
-      state.userPosts.posts = payload.posts;
+      state.posts.isloading = false;
+      state.posts.userPosts = payload.posts;
     },
     [getAllUserPosts.rejected]: (state, { payload }) => {
-      state.userPosts.error = payload;
-      state.userPosts.isloading = false;
+      state.posts.error = payload;
+      state.posts.isloading = false;
     },
     [editPost.pending]: (state) => {
-      state.userProfile.isloading = true;
+      state.profile.isloading = true;
     },
     [editPost.fulfilled]: (state, { payload }) => {
-      state.userProfile.isloading = false;
-      state.userProfile.details = payload.user;
+      state.profile.isloading = false;
+      state.profile.userProfile = payload.user;
     },
     [editPost.rejected]: (state, { payload }) => {
-      state.userProfile.isloading = false;
-      state.userProfile.error = payload;
+      state.profile.isloading = false;
+      state.profile.error = payload;
     },
   },
 });
