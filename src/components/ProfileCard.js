@@ -57,7 +57,7 @@ const ProfileCard = ({ details, setModal }) => {
         </div>
 
         <p>{details.bio}</p>
-        <div className="font-thin text-sm text-gray-400">
+        <div className="font-medium text-sm text-gray-800">
           <a href={details?.website}>{details?.website}</a>
         </div>
 

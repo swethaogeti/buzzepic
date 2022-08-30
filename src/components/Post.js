@@ -60,12 +60,12 @@ const Post = ({ item }) => {
                 </h3>
               </Link>
 
-              <p className="text-gray-500 font-thin text-[.7rem] md:text-[.9rem]">
+              <p className="text-gray-800 font-medium text-[.7rem] md:text-[.9rem]">
                 {item.username}
               </p>
             </div>
-            <h3 className="text-gray-500 font-thin text-[.7rem] md:text-[.9rem] flex items-center">
-              <span className="text-gray-500 text-[1.3rem]">•&nbsp;</span>{" "}
+            <h3 className="text-gray-500 font-bold text-[.7rem] md:text-[.9rem] flex items-center">
+              <span className="text-gray-800 text-[1.3rem]">•&nbsp;</span>{" "}
               <Moment fromNow>{item.updatedAt}</Moment>
             </h3>
 
