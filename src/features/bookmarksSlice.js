@@ -56,7 +56,6 @@ const bookmarkSlice = createSlice({
     [getAllBookmarks.fulfilled]: (state, { payload }) => {
       state.isloading = false;
       state.bookmarks = payload.bookmarks;
-      console.log(payload);
       state.error = " ";
     },
     [getAllBookmarks.rejected]: (state, { payload }) => {
@@ -66,7 +65,6 @@ const bookmarkSlice = createSlice({
 
     [bookmarkPost.fulfilled]: (state, { payload }) => {
       state.isloading = false;
-      console.log(payload);
       state.bookmarks = payload.bookmarks;
     },
     [bookmarkPost.rejected]: (state, { payload }) => {
@@ -76,7 +74,6 @@ const bookmarkSlice = createSlice({
 
     [removePostFromBookmark.fulfilled]: (state, { payload }) => {
       state.isloading = false;
-      console.log(payload);
       state.bookmarks = payload.bookmarks;
     },
     [removePostFromBookmark.rejected]: (state, { payload }) => {

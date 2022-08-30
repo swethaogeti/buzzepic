@@ -15,9 +15,8 @@ const Bookmarks = () => {
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
       <main className="flex">
-        {/* sidebar */}
         <Sidebar />
-        {/* feed */}
+
         {bookmarks.length ? (
           <Container posts={bookmarks} />
         ) : (
