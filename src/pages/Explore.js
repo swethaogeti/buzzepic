@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Container from "../components/Container";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Suggestions from "../components/Suggestions";
 import { getAllPosts } from "../features/postsSlice";
@@ -14,6 +15,7 @@ const Explore = () => {
   }, []);
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
+      <Navbar />
       <main className="flex">
         <Sidebar />
 

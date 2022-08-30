@@ -15,15 +15,16 @@ const Navbar = () => {
   const { username } = user;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   return (
     <div className=" p-3 sticky top-0 z-50 bg-white shadow-sm">
       <div className="flex items-center justify-between mx-auto max-w-lg md:max-w-7xl">
-        <Link to="/buzzepic">
+        <Link to="/">
           <h1 className="text-purple-600 text-4xl font-bold hidden md:block">
             BuzzEpic
           </h1>
         </Link>
-        <Link to="/buzzepic">
+        <Link to="/">
           <h1 className="text-purple-600 text-4xl font-bold md:hidden "> BE</h1>
         </Link>
 
@@ -31,7 +32,11 @@ const Navbar = () => {
           <SidebarRow Icon={HomeIcon} path={"feed"} />
           <SidebarRow Icon={ExploreIcon} path={"explore"} />
           <SidebarRow Icon={BookmarkIcon} path={"bookmarks"} />
-          <SidebarRow Icon={AccountCircleIcon} path={`profile/${username}`} />
+          {username ? (
+            <SidebarRow Icon={AccountCircleIcon} path={`profile/${username}`} />
+          ) : (
+            <h1>No user Found</h1>
+          )}
         </div>
         <div className="flex  space-x-2 items-center cursor-pointer flex-col">
           <Avatar
@@ -45,7 +50,10 @@ const Navbar = () => {
             "hey hi 👋"
           ) : (
             <button
-              onClick={() => navigate("/")}
+              onClick={() => {
+                dispatch(signout());
+                navigate("/");
+              }}
               className="text-purple-600 font-bold"
             >
               LogOut

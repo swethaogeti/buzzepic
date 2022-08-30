@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Container from "../components/Container";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Suggestions from "../components/Suggestions";
 import { getAllBookmarks } from "../features/bookmarksSlice";
@@ -8,12 +9,13 @@ import { getAllBookmarks } from "../features/bookmarksSlice";
 const Bookmarks = () => {
   const { user, token } = useSelector((state) => state.auth);
   const { bookmarks } = useSelector((state) => state.bookmarks);
-  console.log(bookmarks);
+
   useEffect(() => {
     getAllBookmarks(token);
   }, []);
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
+      <Navbar />
       <main className="flex">
         <Sidebar />
 

@@ -18,7 +18,7 @@ import EditPostModal from "./components/EditPostModal";
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Routes>
         <Route path="/login" element={<Login />}></Route>

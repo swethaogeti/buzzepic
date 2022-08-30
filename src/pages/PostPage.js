@@ -11,6 +11,7 @@ import Suggestions from "../components/Suggestions";
 import { getPost } from "../features/postSlice";
 import { getAllPosts } from "../features/postsSlice";
 import Post from "../components/Post";
+import Navbar from "../components/Navbar";
 const PostPage = () => {
   const { postId } = useParams();
   const { post } = useSelector((state) => state.post);
@@ -27,6 +28,7 @@ const PostPage = () => {
 
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
+      <Navbar />
       <main className="flex ">
         <Sidebar />
 
