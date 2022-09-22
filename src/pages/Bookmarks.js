@@ -1,18 +1,21 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Container from "../components/Container";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Suggestions from "../components/Suggestions";
 import { getAllBookmarks } from "../features/bookmarksSlice";
+import { getAllPosts } from "../features/postsSlice";
 
 const Bookmarks = () => {
   const { user, token } = useSelector((state) => state.auth);
   const { bookmarks } = useSelector((state) => state.bookmarks);
-
+  const { posts } = useSelector((state) => state.posts);
+  const dispatch = useDispatch();
   useEffect(() => {
-    getAllBookmarks(token);
-  }, []);
+    dispatch(getAllBookmarks(token));
+  }, [token, dispatch]);
+
   return (
     <div className=" h-screen  md:max-w-7xl mx-auto">
       <Navbar />

@@ -48,7 +48,10 @@ const EditPostModal = ({ setModal, post }) => {
             ></textarea>
           </form>
           <div className="flex justify-end space-x-3">
-            <button className="w-14 p-1 text-purple-600 rounded-md font-bold">
+            <button
+              className="w-14 p-1 text-purple-600 rounded-md font-bold"
+              onClick={() => setModal(false)}
+            >
               Cancel
             </button>
             <button

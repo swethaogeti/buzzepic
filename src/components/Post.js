@@ -29,9 +29,11 @@ const Post = ({ item }) => {
 
   const handleLike = async () => {
     const res = await dispatch(likePost({ postId: _id, token }));
+    console.log(res);
   };
   const handleDislike = async () => {
     const res = await dispatch(dislikePost({ postId: _id, token }));
+    console.log(res);
   };
 
   const handleBookmark = async () => {
@@ -91,7 +93,7 @@ const Post = ({ item }) => {
           <p className="text-[.8rem] md:text-[1rem] ">{item.content}</p>
 
           <div className="text-gray-600 flex justify-between">
-            {likedBy?.find(({ username }) => username === user.username) ? (
+            {likedBy.find(({ username }) => username === user.username) ? (
               <FavoriteIcon
                 className="btn"
                 style={{ color: "#8F00FF" }}

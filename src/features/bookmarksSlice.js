@@ -54,6 +54,7 @@ const bookmarkSlice = createSlice({
       state.isloading = true;
     },
     [getAllBookmarks.fulfilled]: (state, { payload }) => {
+      console.log(payload.bookmarks);
       state.isloading = false;
       state.bookmarks = payload.bookmarks;
       state.error = " ";

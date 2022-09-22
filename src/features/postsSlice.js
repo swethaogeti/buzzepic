@@ -25,14 +25,13 @@ const createPost = createAsyncThunk(
   async ({ postData, token }, { rejectWithValue }) => {
     try {
       const { data } = await createPostService(postData, token);
-      console.log(data);
       return data;
     } catch (error) {
       rejectWithValue("error occured in creating the post");
     }
   }
 );
-//const url = "https://course-api.com/react-useReducer-cart-project";
+
 const getAllPosts = createAsyncThunk(
   "posts/getAllPosts",
   async (_, { rejectWithValue }) => {
@@ -206,7 +205,6 @@ const postsSlice = createSlice({
       state.error = "";
     },
     [deletePost.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.posts = payload.posts;
       state.error = "";
     },
